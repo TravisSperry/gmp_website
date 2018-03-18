@@ -1,10 +1,14 @@
 .home-header{
-  background: -webkit-linear-gradient(#FFFFFF 0%, #EEEEEE 100%);
-  background:      -o-linear-gradient(#FFFFFF 0%, #EEEEEE 100%);
-  background:         linear-gradient(#FFFFFF 0%, #EEEEEE 100%);
+  background: -webkit-linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
+  background:      -o-linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
+  background:         linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
   border-bottom: $grey-color 3px solid;
   min-height: 15rem;
   padding: 4rem 0;
+
+  .gmp-logo{
+    margin-bottom: 4em;
+  }
 }
 
 .home-cta{
@@ -23,4 +27,18 @@
   background:         linear-gradient(253deg, #6A6A6A 0%, #3B3B3B 100%);
   min-height: 15rem;
   padding: 4rem 0;
+}
+
+.gmw-countdown{
+  color: #FFFFFF;
+  background-color: #AAAAAA;
+  border-radius: $base-border-radius;
+  font-size: 1rem;
+  margin: auto;
+  max-width: 400px;
+  padding: .75rem 1.3rem;
+
+  span:not(:first-child){
+    margin-left: .5em;
+  }
 }
