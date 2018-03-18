@@ -240,6 +240,28 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+/**
+ * Buttons
+ */
+
+.btn{
+  border-radius: $base-border-radius;
+  padding: .75rem 1.5rem;
+  text-transform: uppercase;
+
+  &.btn-primary{
+    color: $brand-color;
+    border: 1px solid #14186E;
+
+    &:hover{
+      color: $grey-color-light;
+      background-color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}
+
+
 
 /**
  * Type formatting
