@@ -20,8 +20,8 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.globalmathproject.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: GlobalMathProj
-facebook_username: theglobalmathproject
-youtube_username: UCLo4jBc9fQkVPbmdnSL4IRg
+facebook_username: TheGlobalMathProject
+youtube_username: TheGlobalMathProject 
 
 # Build settings
 markdown: kramdown

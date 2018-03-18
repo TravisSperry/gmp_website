@@ -48,7 +48,8 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
+  "minima/flexbox",
   "minima/base",
-  "minima/layout",
-  "minima/home"
+  "minima/home",
+  "minima/layout"
 ;

@@ -257,6 +257,8 @@ table {
       color: $grey-color-light;
       background-color: $brand-color;
       text-decoration: none;
+    -webkit-transition: background-color .5s; /* Safari */
+            transition: background-color .5s;
     }
   }
 }
