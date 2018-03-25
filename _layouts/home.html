@@ -11,11 +11,11 @@ javascripts:
       We are a global math community of people who want all learners and teachers across the globe to experience joy and wonder in school- relevant mathematics.
     </div>
     <div class="gmw-countdown">
-      <span id="countdown-month"><strong>10</strong> months</span>
-      <span id="countdown-days"><strong>25</strong> days</span>
-      <span id="countdown-hours"><strong>13</strong> hours</span>
-      <span id="countdown-minutes"><strong>2</strong> minutes</span>
-      <span id="countdown-seconds"><strong>46</strong> seconds</span>
+      <span id="countdown-months"><strong></strong> months</span>
+      <span id="countdown-days"><strong></strong> days</span>
+      <span id="countdown-hours"><strong></strong> hours</span>
+      <span id="countdown-minutes"><strong></strong> minutes</span>
+      <span id="countdown-seconds"><strong></strong> seconds</span>
     </div>
   </div>
   <div class="home-cta">
@@ -39,21 +39,36 @@ javascripts:
 
 <script type="text/javascript">
   // Set the date we're counting down to
-  var countDownDate = new Date("10 7, 2018 08:00:00").getTime();
+  var countDownDate = new Date("10 7, 2018 08:00:00");
+  var countDownTime = countDownDate.getTime();
+  var currentMonth = new Date().getMonth()
 
-  // Update the count down every 1 second
+  // Update every 1 second
   var x = setInterval(function() {
-    // Get todays date and time
+    // Get today's date and time
     var now = new Date().getTime();
-    var distance = countDownDate - now;
+    var distance = countDownTime - now;
+
+    // calculate days left in the month
+
 
     // do more things and get the months and fix the days...
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var months = countDownDate.getMonth() - currentMonth
+    if (countDownDate.getMonth() == currentMonth) {
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    }else {
+      var date = new Date();
+      var time = new Date(date.getTime());
+      time.setMonth(date.getMonth() + 1);
+      time.setDate(0);
+      var days = time.getDate() > date.getDate() ? time.getDate() - date.getDate() : 0;
+    }
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
+    document.getElementById("countdown-months").innerHTML = `<strong>${months}</strong> months`;
     document.getElementById("countdown-days").innerHTML = `<strong>${days}</strong> days`;
     document.getElementById("countdown-hours").innerHTML = `<strong>${hours}</strong> hours`;
     document.getElementById("countdown-minutes").innerHTML = `<strong>${minutes}</strong> minutes`;
