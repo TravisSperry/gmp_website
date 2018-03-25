@@ -105,10 +105,6 @@ a {
 
   .social-media-list &:hover {
     text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -200,6 +196,7 @@ pre {
     width: 16px;
     height: 16px;
     display: inline-block;
+    margin-right: 10px;
     fill: #{$grey-color};
     padding-right: 5px;
     vertical-align: text-top;
