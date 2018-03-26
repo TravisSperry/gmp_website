@@ -4,20 +4,16 @@
   background:         linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
   border-bottom: $grey-color 3px solid;
   min-height: 15rem;
-  padding: 4rem 0;
+  padding: 9rem 0;
 
   .gmp-logo{
-    width: 600px;
     margin-bottom: 2em;
   }
 
   .home-header-text{
     font-size: 24px;
     line-height: 29px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 2em;
-    width: 575px;
   }
 }
 
@@ -66,10 +62,15 @@
   border-radius: $base-border-radius;
   font-size: 1.5rem;
   margin: auto;
-  max-width: 600px;
   padding: .75rem 1.3rem;
 
   span:not(:first-child){
     margin-left: .5rem;
+  }
+}
+
+@include media-query($on-palm) {
+  .home-header {
+    padding: 3rem 0;
   }
 }
