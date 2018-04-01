@@ -40,6 +40,10 @@
 .footer-site-map{
   margin: 60px 0;
 
+  .row{
+    justify-content: center;
+  }
+
   .site-map-section-name{
     color: $grey-color-dark;
     font-weight: bold;
