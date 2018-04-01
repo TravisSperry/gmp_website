@@ -99,52 +99,6 @@
   }
 }
 
-
-
-/**
- * Site footer
- */
-.site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: 100px 0;
-  background: $grey-color-dark;
-}
-
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-  margin-bottom: 0;
-
-  li{
-    display: inline-block;
-  }
-}
-
-.footer-col-wrapper {
-  @include relative-font-size(0.9375);
-  color: white;
-  background: $grey-color-light;
-  margin-left: auto;
-  margin-right: auto;
-  @extend %clearfix;
-  border-radius: $base-border-radius;
-  max-width: 330px;
-  padding: .75rem 1.3rem;
-
-  .footer-title{
-    color: $grey-color;
-    font-size: 1.3rem;
-  }
-}
-
-@include media-query($on-laptop) {
-}
-
-@include media-query($on-palm) {
-}
-
-
-
 /**
  * Page content
  */
