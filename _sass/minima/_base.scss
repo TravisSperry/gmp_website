@@ -244,7 +244,7 @@ table {
 .btn{
   border-radius: $base-border-radius;
   box-sizing: border-box;
-  padding: .75rem 1.5rem;
+  padding: .55rem 1.5rem;
   text-transform: uppercase;
   -webkit-transition: background-color .5s; /* Safari */
           transition: background-color .5s;
@@ -262,7 +262,7 @@ table {
 }
 
 .btn-secondary{
-  color: $grey-color-light !important;
+  color: $brand-color-light !important;
   border: 2px solid $brand-color-light;
 
   &:hover{
