@@ -8,6 +8,7 @@ $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
 $base-border-radius: 32px !default;
+$card-border-radius: 6px !default;
 
 $spacing-unit:     30px !default;
 
@@ -53,5 +54,6 @@ $on-laptop:        800px !default;
   "minima/base",
   "minima/home",
   "minima/footer",
-  "minima/layout"
+  "minima/layout",
+  "minima/page"
 ;

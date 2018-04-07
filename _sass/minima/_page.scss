@@ -1,0 +1,23 @@
+.page-body{
+  background-image: url('/assets/img/page-bg.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 15rem;
+}
+
+.page-content{
+  padding: 5rem 0;
+}
+
+.about-page:before{
+  background-image: url('/assets/img/gmp-balloon.svg');
+  background-size: 100% 100%;
+  content: "";
+  display: inline-block;
+  height: 100px;
+  position: relative;
+  left: 25%;
+  width: 100px;
+  z-index: 1000;
+}
