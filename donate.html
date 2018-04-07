@@ -4,7 +4,7 @@ title: Donate
 permalink: /donate/
 ---
 
-<div class="about-page">
+<div class="donate-page">
   <section class="display donate-banner">
     <h1 class="header-jumbo text-center">Donate</h1>
     <p class="text-jumbo text-plain text-center">
@@ -23,9 +23,35 @@ permalink: /donate/
         <h1 class="card-title text-center">Select Amount</h1>
       </div>
       <div class="card-body">
-        <p class="card-content">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida elit vitae suscipit volutpat. Phasellus a orci id quam posuere ullamcorper. Vestibulum feugiat fringilla dictum. Etiam convallis, justo sit amet placerat ullamcorper, ipsum nisl elementum ante, eget dignissim justo est et felis. Vivamus placerat nisi a lorem ultricies, id lobortis tellus accumsan. Integer eu ullamcorper mi, ultrices dictum sem. Integer placerat, turpis sit amet lacinia pretium, mauris elit varius augue, eget sagittis lorem libero quis lectus. Etiam tellus libero, aliquam sit amet orci non, malesuada aliquet elit. Morbi volutpat, eros at maximus imperdiet, nisi orci sollicitudin eros, non hendrerit magna nibh vel libero. Nam vitae interdum nulla. Cras lobortis nibh elit, varius vehicula velit pretium sed.
-        </p>
+        <div class="row donate-buttons">
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donate-amount" data-value="$5">$5</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donate-amount" data-value="$30">$30</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donate-amount" data-value="$50">$50</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <p class="text-jumbo">OR</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <button type="button" name="donate5" class="btn-donate-amount">other</button>
+          </div>
+          <div class="col-sm-8">
+            <input type="text" name="custom-donation-amount" class="input-donate" value="" placeholder="amount">
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-sm-12 text-center">
+            <button type="button" name="button" class="btn btn-donate btn-wide">Donate $<span>30</span></button>
+          </div>
+        </div>
       </div>
       <div class="card-footer">
         <div class="text-center">
@@ -40,3 +66,33 @@ permalink: /donate/
     </div>
   </section>
 </div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('customButton').addEventListener('click', function(e) {
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Stripe.com',
+    description: '2 widgets',
+    zipCode: true,
+    amount: 2000
+  });
+  e.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>

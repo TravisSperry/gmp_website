@@ -262,13 +262,27 @@ table {
  * Buttons
  */
 
+ button:focus{
+  outline: none;
+ }
+
+button:hover{
+  cursor: pointer;
+}
+
 .btn{
   border-radius: $base-border-radius;
   box-sizing: border-box;
+  font-family: inherit;
   padding: .55rem 1.5rem;
   text-transform: uppercase;
-  -webkit-transition: background-color .5s; /* Safari */
-          transition: background-color .5s;
+  -webkit-transition: background-color .2s; /* Safari */
+          transition: background-color .2s;
+}
+
+button.btn{
+  font-family: inherit;
+  font-size: inherit;
 }
 
 .btn-primary{
@@ -347,7 +361,7 @@ table {
     border-top-left-radius: $card-border-radius;
     border-top-right-radius: $card-border-radius;
     box-sizing: border-box;
-    padding: 3rem 0 1rem 0;
+    padding: 2rem 0 1rem 0;
 
     .card-title{
       font-size: 1.5rem;
