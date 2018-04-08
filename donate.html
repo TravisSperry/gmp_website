@@ -25,13 +25,13 @@ permalink: /donate/
       <div class="card-body">
         <div class="row donate-buttons">
           <div class="col-xs-4">
-            <button type="button" name="donate5" class="btn-donate-amount" data-value="$5">$5</button>
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="5">$5</button>
           </div>
           <div class="col-xs-4">
-            <button type="button" name="donate5" class="btn-donate-amount" data-value="$30">$30</button>
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="30">$30</button>
           </div>
           <div class="col-xs-4">
-            <button type="button" name="donate5" class="btn-donate-amount" data-value="$50">$50</button>
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="50">$50</button>
           </div>
         </div>
         <div class="row">
@@ -41,19 +41,31 @@ permalink: /donate/
         </div>
         <div class="row">
           <div class="col-sm-4">
-            <button type="button" name="donate5" class="btn-donate-amount">other</button>
+            <button id="btn-custom-donation-amount" type="button" name="donate5" class="btn-donation-amount" data-amount="0">other</button>
           </div>
           <div class="col-sm-8">
-            <input type="text" name="custom-donation-amount" class="input-donate" value="" placeholder="amount">
+            <input id="custom-donation-amount" type="number" name="custom-donation-amount" class="input-donate" value="" placeholder="amount">
           </div>
         </div>
         <div class="row ">
           <div class="col-sm-12 text-center">
-            <button type="button" name="button" class="btn btn-donate btn-wide">Donate $<span>30</span></button>
+            <button id="submit-donation" data-amount="30" type="button" name="button" class="btn btn-donate btn-wide">
+              Donate $<span>30</span>
+            </button>
           </div>
         </div>
       </div>
       <div class="card-footer">
+        <div class="text-center">
+          <p>
+            <em>
+              The Global Math Project is hosted by the <a href="https://www.aimath.org">American Institute of Mathematics</a>, a nonprofit, tax-exempt charitable organization (tax identification number 94-3205114) under Section 501(c)(3) of the Internal Revenue Code.
+            </em>
+          </p>
+          <p>
+            <em>Donations are tax-deductible as allowed by law.</em>
+          </p>
+        </div>
         <div class="text-center">
           <p>
             <strong>All donations are processed via secure payment portal.</strong>
@@ -70,9 +82,42 @@ permalink: /donate/
 <script src="https://checkout.stripe.com/checkout.js"></script>
 
 <script>
+document.getElementById('custom-donation-amount').addEventListener('input', function(event) {
+  var customDonationAmount = this.value,
+      btnCustomDonationAmount = document.getElementById('btn-custom-donation-amount'),
+      submitDonation = document.getElementById('submit-donation');
+
+  btnCustomDonationAmount.classList.add('active');
+  btnCustomDonationAmount.dataset.amount = customDonationAmount;
+  submitDonation.dataset.amount = customDonationAmount;
+  submitDonation.firstElementChild.innerText =  customDonationAmount;
+});
+
+document.getElementById('btn-custom-donation-amount').addEventListener('click', function() {
+  var customDonationAmount = document.getElementById('custom-donation-amount'),
+      submitDonation = document.getElementById('submit-donation');
+});
+
+Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(function(btnDonateAmount) {
+  btnDonateAmount.addEventListener('click', function(event) {
+    var donationAmount = this.dataset.amount,
+        submitDonation = document.getElementById('submit-donation');
+
+    Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(function(btnDonateAmount) {
+      btnDonateAmount.classList.remove('active');
+    });
+
+    this.classList.add('active');
+
+    submitDonation.firstElementChild.innerText = donationAmount;
+    submitDonation.dataset.amount = donationAmount;
+  });
+});
+
+// Stripe initialization
 var handler = StripeCheckout.configure({
-  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  key: 'pk_test_NWfshHqM7Q3PS2PZV6ozviI2',
+  image: '/assets/img/gmp-balloon.svg',
   locale: 'auto',
   token: function(token) {
     // You can access the token ID with `token.id`.
@@ -80,15 +125,16 @@ var handler = StripeCheckout.configure({
   }
 });
 
-document.getElementById('customButton').addEventListener('click', function(e) {
+document.getElementById('submit-donation').addEventListener('click', function(event) {
+  var donationAmount = event.toElement.dataset.amount
   // Open Checkout with further options:
   handler.open({
-    name: 'Stripe.com',
-    description: '2 widgets',
+    name: 'Global Math Project Donation',
+    description: `$${donationAmount} Donation`,
     zipCode: true,
-    amount: 2000
+    amount: donationAmount * 100
   });
-  e.preventDefault();
+  event.preventDefault();
 });
 
 // Close Checkout on page navigation:

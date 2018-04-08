@@ -16,13 +16,13 @@
   content: "";
   display: inline-block;
   height: 100px;
-  position: relative;
-  left: 25%;
+  position: absolute;
+  left: 15%;
   width: 100px;
   z-index: 1000;
 }
 
-.btn-donate-amount{
+.btn-donation-amount{
   border: solid 1px #AAAAAA;
   box-sizing:border-box;
   border-radius: 4px;
@@ -33,7 +33,7 @@
   padding: .4em 1em;
   width: 100%;
 
-  &:focus{
+  &.active{
     color: #FFFFFF;
     background-color: #386ABC;
     border: solid 1px #386ABC;
