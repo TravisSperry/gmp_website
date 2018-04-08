@@ -27,6 +27,7 @@ youtube_username: TheGlobalMathProject
 markdown: kramdown
 theme: minima
 plugins:
+  - jekyll-assets
   - jekyll-feed
   - jekyll-sitemap
 
