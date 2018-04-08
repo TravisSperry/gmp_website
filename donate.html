@@ -1,0 +1,144 @@
+---
+layout: page
+title: Donate
+permalink: /donate/
+---
+
+<div class="donate-page">
+  <section class="display donate-banner">
+    <h1 class="header-jumbo text-center">Donate</h1>
+    <p class="text-jumbo text-plain text-center">
+      We are changing the world’s perception of mathematics.
+    </p>
+    <p class="text-jumbo text-plain text-center">
+      In 2017, <span class="text-brand-emphasize">1.7 MILLION</span> students across the globe experienced uplifting mathematics.
+    </p>
+    <p class="text-jumbo text-plain text-center">
+      <strong>Help us inspire millions more students in 2018!</strong>
+    </p>
+  </section>
+  <section class="display">
+    <div class="card">
+      <div class="card-header">
+        <h1 class="card-title text-center">Select Amount</h1>
+      </div>
+      <div class="card-body">
+        <div class="row donate-buttons">
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="5">$5</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="30">$30</button>
+          </div>
+          <div class="col-xs-4">
+            <button type="button" name="donate5" class="btn-donation-amount" data-amount="50">$50</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <p class="text-jumbo">OR</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <button id="btn-custom-donation-amount" type="button" name="donate5" class="btn-donation-amount" data-amount="0">other</button>
+          </div>
+          <div class="col-sm-8">
+            <input id="custom-donation-amount" type="number" name="custom-donation-amount" class="input-donate" value="" placeholder="amount">
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-sm-12 text-center">
+            <button id="submit-donation" data-amount="30" type="button" name="button" class="btn btn-donate btn-wide">
+              Donate $<span>30</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="text-center">
+          <p>
+            <em>
+              The Global Math Project is hosted by the <a href="https://www.aimath.org">American Institute of Mathematics</a>, a nonprofit, tax-exempt charitable organization (tax identification number 94-3205114) under Section 501(c)(3) of the Internal Revenue Code.
+            </em>
+          </p>
+          <p>
+            <em>Donations are tax-deductible as allowed by law.</em>
+          </p>
+        </div>
+        <div class="text-center">
+          <p>
+            <strong>All donations are processed via secure payment portal.</strong>
+          </p>
+        </div>
+        <div class="text-center">
+          <img src="/assets/img/powered_by_stripe.svg" alt="Stripe Secure Payment">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+
+<script>
+document.getElementById('custom-donation-amount').addEventListener('input', function(event) {
+  var customDonationAmount = this.value,
+      btnCustomDonationAmount = document.getElementById('btn-custom-donation-amount'),
+      submitDonation = document.getElementById('submit-donation');
+
+  btnCustomDonationAmount.classList.add('active');
+  btnCustomDonationAmount.dataset.amount = customDonationAmount;
+  submitDonation.dataset.amount = customDonationAmount;
+  submitDonation.firstElementChild.innerText =  customDonationAmount;
+});
+
+document.getElementById('btn-custom-donation-amount').addEventListener('click', function() {
+  var customDonationAmount = document.getElementById('custom-donation-amount'),
+      submitDonation = document.getElementById('submit-donation');
+});
+
+Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(function(btnDonateAmount) {
+  btnDonateAmount.addEventListener('click', function(event) {
+    var donationAmount = this.dataset.amount,
+        submitDonation = document.getElementById('submit-donation');
+
+    Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(function(btnDonateAmount) {
+      btnDonateAmount.classList.remove('active');
+    });
+
+    this.classList.add('active');
+
+    submitDonation.firstElementChild.innerText = donationAmount;
+    submitDonation.dataset.amount = donationAmount;
+  });
+});
+
+// Stripe initialization
+var handler = StripeCheckout.configure({
+  key: 'pk_test_NWfshHqM7Q3PS2PZV6ozviI2',
+  image: '/assets/img/gmp-balloon.svg',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+  }
+});
+
+document.getElementById('submit-donation').addEventListener('click', function(event) {
+  var donationAmount = event.toElement.dataset.amount
+  // Open Checkout with further options:
+  handler.open({
+    name: 'Global Math Project Donation',
+    description: `$${donationAmount} Donation`,
+    zipCode: true,
+    amount: donationAmount * 100
+  });
+  event.preventDefault();
+});
+
+// Close Checkout on page navigation:
+window.addEventListener('popstate', function() {
+  handler.close();
+});
+</script>
