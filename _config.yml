@@ -21,7 +21,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://www.globalmathproject.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: GlobalMathProj
 facebook_username: TheGlobalMathProject
-youtube_username: TheGlobalMathProject 
+youtube_username: TheGlobalMathProject
 
 # Build settings
 markdown: kramdown
@@ -29,14 +29,5 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+gems: ['kramdown']
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor', 'Procfile', 'Rakefile']
