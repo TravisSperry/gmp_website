@@ -263,7 +263,6 @@ DEPENDENCIES
   jekyll-assets
   jekyll-feed (~> 0.6)
   jekyll-sitemap
-  minima
   tzinfo-data
 
 RUBY VERSION
