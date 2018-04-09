@@ -4,7 +4,7 @@
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <img src="/assets/img/gmp_logo_balloon.svg" height="20px" alt="gmp balloon logo">
+      <img src="{{ "/assets/img/gmp-logo-balloon.svg" | relative_url }}" height="20px" alt="gmp balloon logo">
     </a>
 
     {% if page_paths %}
@@ -22,7 +22,7 @@
 
         <div class="trigger">
           <a href="https://www.explodingdots.org" target="_blank" class="page-link btn btn-primary">Sign Up</a>
-          <a href="/donate" class="page-link btn btn-secondary">Donate</a>
+          <a href="{{ "donate" | relative_url }}" class="page-link btn btn-secondary">Donate</a>
         </div>
       </nav>
     {% endif %}

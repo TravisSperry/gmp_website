@@ -72,7 +72,7 @@ permalink: /donate/
           </p>
         </div>
         <div class="text-center">
-          <img src="/assets/img/powered_by_stripe.svg" alt="Stripe Secure Payment">
+          <img src="{{ "assets/img/powered_by_stripe.svg" | relative_url }}" alt="Stripe Secure Payment">
         </div>
       </div>
     </div>
@@ -117,7 +117,7 @@ Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(funct
 // Stripe initialization
 var handler = StripeCheckout.configure({
   key: 'pk_test_NWfshHqM7Q3PS2PZV6ozviI2',
-  image: '/assets/img/gmp-balloon.svg',
+  image: "{{ 'assets/img/gmp-balloon.png' | relative_url }}",
   locale: 'auto',
   token: function(token) {
     // You can access the token ID with `token.id`.

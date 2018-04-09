@@ -46,10 +46,9 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
-@import "/assets/fonts/fonts.css";
-
 // Import partials.
 @import
+  "minima/fonts",
   "minima/flexbox",
   "minima/base",
   "minima/home",
