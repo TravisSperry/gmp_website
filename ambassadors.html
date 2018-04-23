@@ -34,7 +34,9 @@ permalink: /ambassadors/
 
   ajax.x = function () {
     if (typeof XMLHttpRequest !== 'undefined') {
-        return new XMLHttpRequest();
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true
+        return xhr;
     }
     var versions = [
         "MSXML2.XmlHttp.6.0",
