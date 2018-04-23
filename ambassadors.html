@@ -29,8 +29,8 @@ permalink: /ambassadors/
 
 <script type="text/javascript">
   var ajax = {},
-      apiUrl = 'http://localhost:3000',
-      baseUrl = 'http://localhost:4000'
+      apiUrl = document.head.querySelector("[name=gmp-api-url]").content,
+      baseUrl = document.head.querySelector("[name=site-url]").content
 
   ajax.x = function () {
     if (typeof XMLHttpRequest !== 'undefined') {
