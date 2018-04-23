@@ -1,0 +1,120 @@
+---
+layout: default
+title: Ambassadors
+permalink: /ambassadors/
+---
+<div class="ambassadors-page">
+  <div class="ambassadors-page-header">
+    <div class="display">
+      <img class="ambassador-page-gmp-logo" src="/assets/img/gmp-logo-monochrome.svg" alt="global math project">
+      <h1 class="text-center text-white">Ambassadors</h1>
+      <p class="ambassador-page-large text-center text-white">
+        Can you contribute to spreading the word <br>
+        and fostering excitement?
+      </p>
+      <p class="text-center text-white">
+        Are you over the age of 18?
+      </p>
+      <div class="ambassador-page-large text-center ambassadors-learn-more">
+        <a href="#" class="btn btn-secondary btn-wide text-white">Learn More & Apply</a>
+      </div>
+      <p class="ambassador-email text-center">
+        <span class="text-muted">Or email us at</span> <a href="mailto:info@globalmathproject.org">info@globalmathproject.org</a> <span class="text-muted">and let's chat!</span>
+      </p>
+    </div>
+  </div>
+  <div id="ambassador-page-list" class="container">
+  </div>
+</div>
+
+<script type="text/javascript">
+  var ajax = {},
+      apiUrl = 'http://localhost:3000',
+      baseUrl = 'http://localhost:4000'
+
+  ajax.x = function () {
+    if (typeof XMLHttpRequest !== 'undefined') {
+        return new XMLHttpRequest();
+    }
+    var versions = [
+        "MSXML2.XmlHttp.6.0",
+        "MSXML2.XmlHttp.5.0",
+        "MSXML2.XmlHttp.4.0",
+        "MSXML2.XmlHttp.3.0",
+        "MSXML2.XmlHttp.2.0",
+        "Microsoft.XmlHttp"
+    ];
+
+    var xhr;
+    for (var i = 0; i < versions.length; i++) {
+        try {
+            xhr = new ActiveXObject(versions[i]);
+            break;
+        } catch (e) {
+        }
+    }
+    return xhr;
+  };
+
+  ajax.get = function (url, data, callback, async) {
+    var query = [];
+    for (var key in data) {
+      query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+    }
+    ajax.send(url + (query.length ? '?' + query.join('&') : ''), callback, 'GET', null, async);
+  };
+
+  ajax.send = function (url, callback, method, data, async) {
+    if (async === undefined) {
+      async = true;
+    }
+    var x = ajax.x();
+    x.open(method, url, async);
+    x.onreadystatechange = function () {
+      if (x.readyState == 4) {
+        callback(x.responseText);
+      }
+    };
+    if (method == 'POST') {
+      x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    }
+    x.send(data);
+  };
+
+  ajax.get(apiUrl + '/ambassadors.json', {}, function(data) {
+    renderAmbassadors(JSON.parse(data));
+  });
+
+  renderAmbassadors = function (ambassadors) {
+    var ambassadors = ambassadors,
+        count = ambassadors.length,
+        ambassadorList = document.getElementById('ambassador-page-list'),
+        content = ''
+
+    ambassadors.forEach(function (ambassador, index) {
+      if (index % 3 == 0) {
+        content += '<div class="row ambassador-profile-row">'
+      }
+      content +=
+      `<div class="col-md-4">\
+        <div class="ambassador-page-profile">\
+          <div class="text-center ambassador-profile-photo">\
+            <img src="${ambassador.profile_photo_url || baseUrl + '/assets/img/gmp-balloon.svg'}" alt="ambassador photo">\
+          </div>\
+          <div class="text-center text-light ambassador-name">\
+            ${ambassador.first_name} ${ambassador.last_name}\
+          </div>\
+          <div class="text-center ambassador-country">\
+            <span class="fas fa-globe"></span> ${ambassador.country}\
+          </div>\
+          <div class="text-center text-light ambassador-gmp-statement">\
+            ${ambassador.gmp_statement || ''}
+          </div>\
+        </div>\
+      </div>`;
+      if (index % 3 == 2) content += '</div>';
+    });
+
+    ambassadorList.innerHTML = content
+  };
+</script>
