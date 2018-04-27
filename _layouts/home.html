@@ -12,14 +12,13 @@ layout: default
     <div class="home-header-text">
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-          We are a global math community of people who want all learners and teachers across the globe to experience joy and wonder in school- relevant mathematics.
+          We are a global community of mathematics teachers and supporters who want all learners across the globe to experience joy and wonder in school-relevant mathematics
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
         <div class="gmw-countdown">
-          <span id="countdown-months"><strong></strong> months</span>
           <span id="countdown-days"><strong></strong> days</span>
           <span id="countdown-hours"><strong></strong> hours</span>
           <span id="countdown-minutes"><strong></strong> minutes</span>
@@ -29,10 +28,15 @@ layout: default
     </div>
     <div class="row">
       <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-        <h2 class="text-center">... until Global Math Week 2018</h2>
+        <h2 class="text-center d-none d-md-block">... until Global Math Week 2018</h2>
       </div>
     </div>
   </div>
+  <a href="https://www.explodingdots.org">
+    <img class="header-main-badge"
+         src="assets/img/exploding-dots-2018.svg"
+         alt="Exploding Dots 2.0">
+  </a>
   <div class="home-cta">
     <div class="row cta-header">
       <div class="col-xs-12 text-white text-center">
@@ -41,12 +45,12 @@ layout: default
     </div>
     <div class="row cta-body">
       <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 text-white text-center">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        <strong>Exploding Dots</strong> is an astounding mathematical story that starts at the very beginning of mathematics – it assumes nothing – and swiftly takes you on a wondrous journey through grade school arithmetic, polynomial algebra, and infinite sums to unsolved problems baffling mathematicians to this day.
       </div>
     </div>
     <div class="row">
       <div class="col-xs-12 text-center">
-        <a href="https://www.explodingdots.org" class="cta-button btn btn-secondary btn-wide text-white" target="_blank">SIGN UP</a>
+        <a href="https://www.explodingdots.org" class="cta-button btn btn-secondary btn-wide text-white" target="_blank">LEARN MORE & SIGN UP</a>
       </div>
     </div>
   </div>
@@ -82,22 +86,12 @@ layout: default
 
 
     // do more things and get the months and fix the days...
-    var months = countDownDate.getMonth() - currentMonth
-    if (countDownDate.getMonth() == currentMonth) {
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    }else {
-      var date = new Date();
-      var time = new Date(date.getTime());
-      time.setMonth(date.getMonth() + 1);
-      time.setDate(0);
-      var days = time.getDate() > date.getDate() ? time.getDate() - date.getDate() : 0;
-    }
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("countdown-months").innerHTML = `<strong>${months}</strong> months`;
     document.getElementById("countdown-days").innerHTML = `<strong>${days}</strong> days`;
     document.getElementById("countdown-hours").innerHTML = `<strong>${hours}</strong> hours`;
     document.getElementById("countdown-minutes").innerHTML = `<strong>${minutes}</strong> minutes`;
