@@ -48,6 +48,7 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
+  "minima/dropdown",
   "minima/fonts",
   "minima/flexbox",
   "minima/display",

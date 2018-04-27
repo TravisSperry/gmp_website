@@ -307,6 +307,19 @@ button.btn{
   }
 }
 
+.btn-midnight{
+  color: $grey-color-light !important;
+  background-color: #284B64;
+  border: 2px solid #284B64;
+
+  &:hover{
+    color: $grey-color-light !important;
+    background-color: #1d394d;
+    text-decoration: none;
+  }
+
+}
+
 .btn-wide{
   padding:  .75rem 4.5rem;
 }
