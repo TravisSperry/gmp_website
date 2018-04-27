@@ -34,6 +34,7 @@
   font-family: inherit;
   font-size: 30px;
   font-weight: bold;
+  margin-bottom: 1rem;
   padding: .4em 1em;
   width: 100%;
 
@@ -158,5 +159,11 @@
         padding: 0 3rem;
       }
     }
+  }
+}
+
+@include media-query($on-palm) {
+  .donate-page:before{
+    background-image: none;
   }
 }
