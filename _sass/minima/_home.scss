@@ -17,13 +17,29 @@
   }
 }
 
-.header-main-badge{
+.header-2017-badge{
+  height: 200px;
+  position: absolute;
+  left: 12%;
+  margin: -6rem auto 0 auto;
+  width: 200px;
+}
+
+.header-2018-badge{
   height: 200px;
   position: absolute;
   left: 0;
   right: 0;
   margin: -7rem auto 0 auto;
   width: 300px;
+}
+
+.header-2019-badge{
+  height: 200px;
+  position: absolute;
+  right: 12%;
+  margin: -6rem auto 0 auto;
+  width: 200px;
 }
 
 .home-cta{
@@ -39,7 +55,7 @@
   margin-bottom: -2rem;
 
   .cta-body{
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   .cta-button{
@@ -81,6 +97,45 @@
 
   span:not(:first-child){
     margin-left: .5rem;
+  }
+}
+
+.gauge-container{
+  margin-bottom: 3em;
+
+  .gauge{
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    margin-top: 1rem;
+    max-width: 600px;
+    padding: 5px;
+    margin: auto;
+
+    .gauge-goal{
+      margin-top: 10px;
+      margin-right: 17px;
+      float: right;
+      color: #FFFFFF;
+    }
+
+    .gauge-progress{
+      background: -webkit-linear-gradient(bottom right, #FFDC69 0%, #FFF2EC 100%);
+      background: -o-linear-gradient(bottom right, #FFDC69 0%, #FFF2EC 100%);
+      background: linear-gradient(to top left, #FFDC69 0%, #FFF2EC 100%);
+      border: white solid 2px;
+      border-radius: 32px;
+      margin: 1px;
+      min-height: 2.3rem;
+
+      .gauge-marker{
+        float: right;
+        border-radius: 18px;
+        background-color: rgba(#ffffff, 0.5);
+        margin-top: 2px;
+        margin-right: 3px;
+        padding: 4px 6px;
+      }
+    }
   }
 }
 
