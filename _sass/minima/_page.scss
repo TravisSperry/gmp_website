@@ -1,4 +1,4 @@
-.page-body{
+.page-body {
   background-image: url('img/page-bg.svg');
   background-position: bottom;
   background-repeat: no-repeat;
@@ -6,31 +6,29 @@
   min-height: 15rem;
 }
 
-.page-content{
+.page-content {
   padding: 5rem 0;
 }
 
-/**
- * Donate Page styling
- */
+// Donate Page styling
 
-.donate-page:before{
+.donate-page::before {
   background-image: url('img/gmp-balloon.svg');
   background-size: 100% 100%;
-  content: "";
+  content: '';
   display: inline-block;
   height: 100px;
-  position: absolute;
   left: 15%;
+  position: absolute;
   width: 100px;
   z-index: 1000;
 }
 
-.btn-donation-amount{
-  border: solid 1px #AAAAAA;
-  box-sizing:border-box;
+.btn-donation-amount {
+  border: solid 1px $grey-color-light;
   border-radius: 4px;
-  color: #3A3A3A;
+  box-sizing: border-box;
+  color: $grey-color-dark;
   font-family: inherit;
   font-size: 30px;
   font-weight: bold;
@@ -38,19 +36,19 @@
   padding: .4em 1em;
   width: 100%;
 
-  &.active{
-    color: #FFFFFF;
-    background-color: #386ABC;
-    border: solid 1px #386ABC;
+  &.active {
+    background-color: $brand-color-light;
+    color: #FFF;
+    border: solid 1px $brand-color-light;
   }
 }
 
-.input-donate{
-  background: #DFDFDF;
-  border: solid 1px #DFDFDF;
-  box-sizing: border-box;
+.input-donate {
+  background: $background-color;
+  border: solid 1px $background-color;
   border-radius: 4px;
-  color: #9A9A9A;
+  box-sizing: border-box;
+  color: $grey-color;
   font-family: inherit;
   font-size: 30px;
   font-weight: bold;
@@ -58,112 +56,148 @@
   width: 100%;
 }
 
-.donate-buttons{
+.donate-buttons {
   margin-bottom: 1rem;
 }
 
-.btn-donate{
-  background: -webkit-linear-gradient(#396ABC 0%, #14186E 100%);
-  background:      -o-linear-gradient(#396ABC 0%, #14186E 100%);
-  background:         linear-gradient(#396ABC 0%, #14186E 100%);
-  border: none;
-  box-shadow: 0 2px 5px 0 #333;
-  color: #FFFFFF;
+.btn-donate {
+  background: -webkit-linear-gradient($brand-color-light 0%, $brand-color 100%);
+  background:      -o-linear-gradient($brand-color-light 0%, $brand-color 100%);
+  background:         linear-gradient($brand-color-light 0%, $brand-color 100%);
+  border: 0;
+  box-shadow: 0 2px 5px 0 $grey-color-dark;
+  color: $background-color;
   margin-top: 2.5rem;
   width: 100%;
 
-  &:focus{
+  &:focus {
     box-shadow: none;
   }
 }
 
-/**
- * Ambassador Page styling
- */
+// Ambassador Page styling
 
-.ambassadors-page{
-  .ambassadors-page-header{
+.ambassadors-page {
+  .ambassadors-page-header {
     background-image: url('img/page-bg-deep-blue.svg');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 15rem;
-    padding: 6rem 0 1rem 0;
+    padding: 6rem 0 1rem;
 
-    h1{
+    h1 {
       font-size: 2rem;
       margin-bottom: 3rem;
     }
 
-    h1:before{
+    h1::before {
       content: url('img/wreath-start.svg');
       position: relative;
-      top: 20px;
       right: 10px;
+      top: 20px;
     }
 
-    h1:after{
+    h1::after {
       content: url('img/wreath-end.svg');
+      left: 10px;
       position: relative;
       top: 20px;
-      left: 10px;
     }
 
-    p.ambassador-page-large{
+    .ambassador-page-large {
       font-size: 1.5rem;
       margin-bottom: 2rem;
     }
 
-    .ambassadors-learn-more{
+    .ambassadors-learn-more {
       margin-top: 3rem;
     }
 
-    .ambassador-email{
+    .ambassador-email {
       margin-top: 3rem;
 
-      a{
-        color: #FFFFFF;
+      a {
+        color: $background-color;
       }
     }
   }
 
-  #ambassador-page-list{
-    padding: 5rem 0;
+  #ambassador-page-list {
     min-height: 10rem;
+    padding: 5rem 0;
+  }
 
-    .ambassador-profile-row{
-      margin-bottom: 4rem;
+  .ambassador-page-profile {
+    position: relative;
+
+    &:hover .ambassador-info {
+      display: block;
+      transition: all .5s;
+      z-index: 1;
+    }
+  }
+
+  .ambassador-info {
+    background: $background-color;
+    color: $grey-color;
+    display: none;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    text-align: justify;
+    top: 0;
+  }
+
+
+
+  .ambassador-profile-row {
+    margin-bottom: 4rem;
+  }
+
+  .ambassador-name {
+    font-weight: bolder;
+    margin: .3rem 0;
+  }
+
+  .ambassador-profile-photo {
+    border-radius: 50%;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    width: 120px;
+  }
+
+  .ambassador-country {
+    color: $gold-color;
+    margin-bottom: .3rem;
+  }
+
+  .ambassador-gmp-statement {
+    padding: 0 3rem;
+  }
+
+  .ambassador-bio {
+    h1 {
+      margin-bottom: 0;
     }
 
-    .ambassador-page-profile{
-      .ambassador-name{
-        font-weight: bolder;
-        margin: 0.3rem 0;
-      }
+    margin-bottom: 1rem;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-top: .6rem;
+  }
 
-      .ambassador-profile-photo{
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        margin: auto;
-        overflow: hidden;
-        margin-bottom: 1rem;
-      }
-
-      .ambassador-country{
-        color: #FFD022;
-        margin-bottom: 0.3rem;
-      }
-
-      .ambassador-gmp-statement{
-        padding: 0 3rem;
-      }
-    }
+  .ambassador-links {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
 @include media-query($on-palm) {
-  .donate-page:before{
+  .donate-page::before {
     background-image: none;
   }
 }
