@@ -1,21 +1,23 @@
-@charset "utf-8";
+@charset 'utf-8';
 
 // Define defaults for each variable.
 
-$base-font-family: "Proxima Nova", Georgia, sans-serif !default;
+$base-font-family: 'Proxima Nova', Georgia, sans-serif !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
-$small-font-size:  $base-font-size * 0.875 !default;
+$small-font-size:  $base-font-size * .875 !default;
 $base-line-height: 1.5 !default;
 $base-border-radius: 32px !default;
 $card-border-radius: 10px !default;
 
 $spacing-unit:     30px !default;
 
-$brand-color:      #14186E !default;
-$brand-color-light:#4780C8 !default;
+$brand-color:      #14186e !default;
+$brand-color-light:#4780c8 !default;
 $text-color:       $brand-color !default;
 $background-color: #fdfdfd !default;
+
+$gold-color: #ffd022;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -48,13 +50,12 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
-  "minima/dropdown",
-  "minima/fonts",
-  "minima/flexbox",
-  "minima/display",
-  "minima/base",
-  "minima/home",
-  "minima/footer",
-  "minima/layout",
-  "minima/page"
-;
+  'minima/dropdown',
+  'minima/fonts',
+  'minima/flexbox',
+  'minima/display',
+  'minima/base',
+  'minima/home',
+  'minima/footer',
+  'minima/layout',
+  'minima/page';
