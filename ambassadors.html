@@ -16,7 +16,10 @@ permalink: /ambassadors/
         Are you over the age of 18?
       </p>
       <div class="ambassador-page-large text-center ambassadors-learn-more">
-        <a href="#" class="btn btn-secondary btn-wide text-white">Learn More & Apply</a>
+        <a href="{{ site.data["gmp_api"][jekyll.environment] }}/ambassadors/new?destination_url={{ site.url }}"
+           class="btn btn-secondary btn-wide text-white">
+           Learn More & Apply
+        </a>
       </div>
       <p class="ambassador-email text-center">
         <span class="text-muted">Or email us at</span> <a href="mailto:info@globalmathproject.org">info@globalmathproject.org</a> <span class="text-muted">and let's chat!</span>
@@ -83,7 +86,7 @@ permalink: /ambassadors/
     x.send(data);
   };
 
-  ajax.get(apiUrl + '/ambassadors.json', {}, function(data) {
+  ajax.get(apiUrl + '/ambassadors.json?active_ambassadors=true', {}, function(data) {
     renderAmbassadors(JSON.parse(data));
   });
 

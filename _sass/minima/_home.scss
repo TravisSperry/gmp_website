@@ -1,8 +1,9 @@
 .home-header{
-  background: -webkit-linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
-  background:      -o-linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
-  background:         linear-gradient(#FFFFFF 0%, #DDDDDD 100%);
-  border-bottom: $grey-color 3px solid;
+  background: -webkit-linear-gradient(#FFFFFF 0%, #CDCDCD 100%);
+  background:      -o-linear-gradient(#FFFFFF 0%, #CDCDCD 100%);
+  background:         linear-gradient(#FFFFFF 0%, #CDCDCD 100%);
+  border-bottom: #FFFFFF 3px solid;
+  box-shadow: inset 0px 11px 8px -10px #FFFFFF, inset 0px -13px 17px -10px #555555;
   min-height: 15rem;
   padding: 9rem 0;
 
