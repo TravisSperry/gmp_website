@@ -1,0 +1,66 @@
+.donate-page::before {
+  background-image: url('img/gmp-balloon.svg');
+  background-size: 100% 100%;
+  content: '';
+  display: inline-block;
+  height: 100px;
+  left: 15%;
+  position: absolute;
+  width: 100px;
+  z-index: 1000;
+}
+
+.btn-donation-amount {
+  border: solid 1px $grey-color-light;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $grey-color-dark;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: .4em 1em;
+  width: 100%;
+
+  &.active {
+    background-color: $brand-color-light;
+    border: solid 1px $brand-color-light;
+    color: $background-color;
+  }
+}
+
+.input-donate {
+  background: $background-color;
+  border: solid 1px $background-color;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: $grey-color;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: bold;
+  padding: .4em 1em;
+  width: 100%;
+}
+
+.donate-buttons {
+  margin-bottom: 1rem;
+}
+
+.btn-donate {
+  background: linear-gradient($brand-color-light 0%, $brand-color 100%);
+  border: 0;
+  box-shadow: 0 2px 5px 0 $grey-color-dark;
+  color: $background-color;
+  margin-top: 2.5rem;
+  width: 100%;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+@include media-query($on-palm) {
+  .donate-page::before {
+    background-image: none;
+  }
+}
