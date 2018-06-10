@@ -26,6 +26,7 @@ youtube_username: TheGlobalMathProject
 # Build settings
 markdown: kramdown
 plugins:
+  - jekyll-assets
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-autoprefixer
