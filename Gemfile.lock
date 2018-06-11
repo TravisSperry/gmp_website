@@ -230,6 +230,7 @@ GEM
       forwardable-extended (~> 2.6)
     public_suffix (2.0.5)
     rack (1.6.9)
+    rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -268,6 +269,7 @@ DEPENDENCIES
   jekyll-autoprefixer
   jekyll-feed (~> 0.6)
   jekyll-sitemap
+  rake
   tzinfo-data
 
 RUBY VERSION
