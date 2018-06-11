@@ -8,5 +8,5 @@ deploy:
   keep-history: true
   on:
     branch: gh-pages
-  before_install:
-    - gem update --system
+before_install:
+  - gem update --system
