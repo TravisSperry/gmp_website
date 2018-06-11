@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.5.0
+before_install:
+  - gem update --system
 deploy:
   provider: pages
   skip-cleanup: true
