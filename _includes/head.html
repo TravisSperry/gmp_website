@@ -15,7 +15,6 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="site-url" content="{{ site.url }}">
   <meta name="gmp-api-url" content="{{ site.data["gmp_api"][jekyll.environment] }}">
-  {% feed_meta %}
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
