@@ -1,9 +1,87 @@
 .polynomial-page {
+  color: $grey-color-dark;
+  font-size: 18px;
+
   .polynomial-banner {
     margin-bottom: 5rem;
   }
 
-  .polynomial-widget {
-    padding-top: 4rem;
+  .polynomial-front-matter {
+    margin-top: 3rem;
   }
+
+  .polynomial-widget {
+    margin-top: 1.4rem;
+
+    .card-header {
+      padding: 1rem;
+    }
+
+    .card-body {
+      padding: 0 .8rem;
+    }
+
+    .card-footer {
+      padding: 0 0 .8rem;
+    }
+
+    #name-input {
+      background-color: $grey-color-light;
+      border: 1px solid $grey-color;
+      border-radius: 4px;
+      font-family: 'Proxima Nova Alt';
+      font-size: 1.5rem;
+      padding: 6px 10px;
+    }
+
+    .dropdown {
+      margin-left: .75rem;
+    }
+
+    #png-title {
+      margin-left: 2rem;
+    }
+
+    .png-background {
+      padding-top: 1rem;
+    }
+  }
+
+  .red {
+    color: #d40606 !important;
+  }
+  .orange {
+    color: #ee9c00 !important;
+  }
+  .yellow {
+    color: #e3ff00 !important;
+  }
+  .green {
+    color: #06bf00 !important;
+  }
+  .blue {
+    color: #001a98 !important;
+  }
+
+}
+
+.polynomial-btn-blue{
+  background-color: $brand-color-light;
+  border: 1px solid $brand-color;
+  border-radius: .25rem;
+  color: $background-color;
+  font-family: 'Proxima Nova Alt';
+  font-size: 1.5rem;
+  margin-left: .75rem;
+  padding: 6px 10px;
+}
+
+.polynomial-btn-orange{
+  background-color: #FFA530;
+  border: 1px solid $grey-color-dark;
+  border-radius: .25rem;
+  color: $grey-color-dark;
+  font-family: 'Proxima Nova Alt';
+  font-size: 1.5rem;
+  padding: 6px 10px;
 }

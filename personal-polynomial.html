@@ -15,11 +15,86 @@ permalink: /personal-polynomial/
     </div>
   </section>
   <hr>
-  <section class="polynomial-widget">
-    <div style="height:2000px">
-      <h1 class="text-center">Coming Soon</h1>
-    </div>
+  <section class="polynomial-front-matter container">
+    <p>
+      The Global Math Project and the National Math Festival have teamed up to celebrate <a href="https://www.explodingdots.org">Global Math Week</a> with fun formulas for everyone. Come get your very own Personal Polynomial!
+    </p>
+    <p>
+      What’s a polynomial? Just a type of math expression.
+    </p>
+    <p>
+      What’s your Personal Polynomial? Find out by typing your name below!
+    </p>
+    <p class="text-danger">
+      (This site works best on desktop web browsers.)
+    </p>
   </section>
-</div>
+  <section class="polynomial-widget card container">
+    <div class="page-header card-header">
+      <div id="typed-name">
+        <input type="text" id="name-input" autofocus="autofocus" autocomplete="off" placeholder="Type your name..."></input>
+        <div class="dropdown">
+          <button type="button" class="polynomial-btn-orange">
+            Background Color
+            <span class="fas fa-caret-down"></span>
+          </button>
+          <div class="dropdown-content">
+            <a href="javascript:void(0)" id="background1" class="red">Color #1</a>
+            <a href="javascript:void(0)" id="background2" class="orange">Color #2</a>
+            <a href="javascript:void(0)" id="background3" class="yellow">Color #3</a>
+            <a href="javascript:void(0)" id="background4" class="green">Color #4</a>
+            <a href="javascript:void(0)" id="background5" class="blue">Color #5</a>
+          </div>
+        </div>
+        <button id="reset" type="button" class="polynomial-btn-blue float-right">
+          <span class="fas fa-redo-alt"></span>
+          Reset
+        </button>
+        <button id="download-png" type="button" class="polynomial-btn-blue float-right">
+          <span class="fas fa-cloud-download-alt"></span>
+          Download Image
+        </button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div id="for-png" class="png-background">
+        <h1 id="png-title">Personal Polynomial</h1>
 
-<script type="text/javascript" src="{{ "/assets/js/test.js" | relative_url }}"></script>
+        <!-- Images and polynomials -->
+        <div class="row" style="padding-left: 30px;">
+          <div class="col-md-9">
+            <!-- Canvas for graph -->
+            <div id="container" class="well png-cell-background">
+              <div id="canvasElement" style="width:800px; height:400px;"></div>
+            </div>
+
+            <!-- Written Polynomial -->
+            <div class="well png-cell-background" style="padding-left: 30px; padding-top: 30px;">
+              <h4 id="poly-name" style="font-size: 150%;"></h4>
+            </div>
+          </div>
+
+          <!-- Evaluation of polynomial -->
+          <div class="col-md-3">
+            <div class="row">
+              <div class ="col-md-10">
+                <div id="name-table" class="well png-cell-background" style="font-size: 150%">
+                  <table id="name-tab"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer"></div>
+  </section>
+
+<script type="text/javascript" src="{{ "/assets/js/polynomial/mathbox-bundle.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/d3.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/download.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/fraction.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/html2canvas.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/makepng.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/makepoly.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/polynomial/underhood.js" | relative_url }}"></script>
