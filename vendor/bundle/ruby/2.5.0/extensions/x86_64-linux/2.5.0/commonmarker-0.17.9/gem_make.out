@@ -1,5 +1,5 @@
 current directory: /home/travis/build/TravisSperry/gmp_website/vendor/bundle/ruby/2.5.0/gems/commonmarker-0.17.9/ext/commonmarker
-/home/travis/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180611-4932-1ez2nyd.rb extconf.rb
+/home/travis/.rvm/rubies/ruby-2.5.0/bin/ruby -r ./siteconf20180617-4049-7jwviv.rb extconf.rb
 creating Makefile
 
 current directory: /home/travis/build/TravisSperry/gmp_website/vendor/bundle/ruby/2.5.0/gems/commonmarker-0.17.9/ext/commonmarker
@@ -401,4 +401,4 @@ linking shared-object commonmarker/commonmarker.so
 
 current directory: /home/travis/build/TravisSperry/gmp_website/vendor/bundle/ruby/2.5.0/gems/commonmarker-0.17.9/ext/commonmarker
 make "DESTDIR=" install
-/usr/bin/install -m 0755 commonmarker.so ./.gem.20180611-4932-12kpyxo/commonmarker
+/usr/bin/install -m 0755 commonmarker.so ./.gem.20180617-4049-1p7sy6n/commonmarker

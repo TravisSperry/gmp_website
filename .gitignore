@@ -4,3 +4,4 @@ _site
 .tags*
 assets-cache
 .asset*
+vendor/bundle
