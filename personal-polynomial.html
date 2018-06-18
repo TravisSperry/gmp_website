@@ -61,15 +61,15 @@ permalink: /personal-polynomial/
         <h1 id="png-title">Personal Polynomial</h1>
 
         <!-- Images and polynomials -->
-        <div class="row" style="padding-left: 30px;">
+        <div class="row">
           <div class="col-md-9">
             <!-- Canvas for graph -->
-            <div id="container" class="well png-cell-background">
+            <div id="container" class="png-cell-background">
               <div id="canvasElement" style="width:800px; height:400px;"></div>
             </div>
 
             <!-- Written Polynomial -->
-            <div class="well png-cell-background" style="padding-left: 30px; padding-top: 30px;">
+            <div class="png-cell-background polynomial-equation">
               <h4 id="poly-name" style="font-size: 150%;"></h4>
             </div>
           </div>
@@ -77,17 +77,64 @@ permalink: /personal-polynomial/
           <!-- Evaluation of polynomial -->
           <div class="col-md-3">
             <div class="row">
-              <div class ="col-md-10">
-                <div id="name-table" class="well png-cell-background" style="font-size: 150%">
+              <div class ="col-md-11">
+                <div id="name-table" class="png-cell-background" style="font-size: 150%">
                   <table id="name-tab"></table>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <p class="polynomial-credits text-center">
+              Designed by Branden Stone in cooperation with the Mathermatical Sciences Research Institute (MSRI) and the Global Math Project
+              <span>
+                <img src="{{ "/assets/img/gmp-balloon.svg" | relative_url }}" height="20px" alt="Personal Polynomial Logo">
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="card-footer"></div>
+  </section>
+
+  <section class="container ">
+    <h1 class="text-white">Under the Hood with James Tanton</h1>
+    <h2 class="text-white">How to Interpret Your Personal Polynomial</h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="video-description">
+          <div class="card">
+            <div class="card-header explanation-fill">
+              Here’s a short video giving a very quick overview of how it all works.
+            </div>
+            <div class="card-body text-center">
+              <iframe width="525" height="295" src="https://www.youtube.com/embed/JPlnjLLXe2M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="card-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="video-description">
+          <div class="card">
+            <div class="card-header">
+              <strong>The Math Behind The Scenes: Do you want to know more about how these polynomials are created?</strong> Here’s a longer explanation so you can dive deeper in the math behind it all!
+            </div>
+            <div class="card-body text-center">
+              <iframe width="525" height="295" src="https://www.youtube.com/embed/HPp6l0O7vKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="card-footer">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 <script type="text/javascript" src="{{ "/assets/js/polynomial/mathbox-bundle.min.js" | relative_url }}"></script>
