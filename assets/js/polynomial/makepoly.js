@@ -18,8 +18,8 @@ var startScale = [2,1];
 
 var play = null;
 
-var width  = 800; 
-var height = width/2; 
+var width  = 800;
+var height = width/2;
 
 var colors = {
       x: 0xFF4136,   // red
@@ -46,9 +46,9 @@ d3.select('#reset')
 var element = document.querySelector('#canvasElement');
 
 
-// Creates mathbox 
+// Creates mathbox
 var mathbox = mathBox({
-      plugins: ['core', 'controls', 'mathbox'], // removed 'cursor' to fix cursor issue, 
+      plugins: ['core', 'controls', 'mathbox'], // removed 'cursor' to fix cursor issue,
                                                 // if we remove 'mathbox' then the thinking image happens (I don't like it)
       controls: {
         klass: THREE.OrbitControls,
@@ -89,7 +89,7 @@ view
       .axis({
         axis: 2,
         width: 2,
-        end: true,        
+        end: true,
       })
       .grid({
         width: 1,
@@ -151,7 +151,7 @@ view.array({
       data: ["x", "y"],
     }).label({
       color: colors.z,
-      size: 15,//window.innerWidth*0.021,      
+      size: 15,//window.innerWidth*0.021,
       offset: [13, 20],
       depth: .5,
       zIndex: 1,
@@ -186,7 +186,7 @@ function updateName(newName) {
   usernameUC = splitName(usernameToPrint)[1];
   pointset = encodeName(username);
   view.select('#data').set('data', [ pointset]);
-  view.select('#axisLabel').set('data', [[10+pointset.length/2+1,0], [0,70]]);  
+  view.select('#axisLabel').set('data', [[10+pointset.length/2+1,0], [0,70]]);
 }
 
 
@@ -206,8 +206,8 @@ d3.select('#name-input').on('keyup', function(event){
     // delete changes graph and polynomial, but does not shift graph
     if (d3.event.keyCode == 8) {
       setupVis(username);
-      deleteNameValues();      
-      nameValues(usernameUC);      
+      deleteNameValues();
+      nameValues(usernameUC);
     }
   }
 });
@@ -219,7 +219,7 @@ function nameValues(dataSet) {
   //   .data(dataSet)
   //   .enter()
   //   .append("p")
-  //   .text(function(d,i) { 
+  //   .text(function(d,i) {
   //     var valueString = "";
   //     var charValue = d.toLowerCase();
   //     var charIndex = i+1;
@@ -227,7 +227,7 @@ function nameValues(dataSet) {
   //     charValue = charValue.charCodeAt()-96;
   //     valueString = "P(" +  charIndex + ") = " + charValue + " = " +d;
 
-  //     return valueString; 
+  //     return valueString;
   //   });
 
   var tr = d3.select("#name-tab").selectAll('tr')
@@ -236,7 +236,7 @@ function nameValues(dataSet) {
     .append('tr');
 
   tr.append('td')
-    .text(function(d,i) { 
+    .text(function(d,i) {
       var valueString = "";
       var charValue = d.toLowerCase();
       var charIndex = i+1;
@@ -244,31 +244,31 @@ function nameValues(dataSet) {
       charValue = charValue.charCodeAt()-96;
       valueString = "P(" +  charIndex + ")"; // = " + charValue + " = " +d;
 
-      return valueString; 
+      return valueString;
     })
 
   tr.append('td')
-    .text(function(d,i) { 
+    .text(function(d,i) {
       var valueString = "";
       var charValue = d.toLowerCase();
       var charIndex = i+1;
 
       charValue = charValue.charCodeAt()-96;
-      valueString = "\xa0 = " + charValue; // + " = " +d;
+      valueString = "= " + charValue; // + " = " +d;
 
-      return valueString; 
+      return valueString;
     });
 
   tr.append('td')
-    .text(function(d,i) { 
+    .text(function(d,i) {
       var valueString = "";
       var charValue = d.toLowerCase();
       var charIndex = i+1;
 
       charValue = charValue.charCodeAt()-96;
-      valueString = "\xa0 = " +d;
+      valueString = "= " +d;
 
-      return valueString; 
+      return valueString;
     });
 }
 
@@ -306,11 +306,11 @@ function setupVis(nameArray) {
   d3.select("#poly-name").html("P(x) = " + makePoly(pointset) + "<br>" + usernameToPrint);
   console.log(usernameToPrint.slice(-1));
   if(usernameToPrint.slice(-1) == 's'){
-    d3.select("#png-title").html(usernameToPrint + "\' Personal Polynomial");  
+    d3.select("#png-title").html(usernameToPrint + "\' Personal Polynomial");
   } else {
-    d3.select("#png-title").html(usernameToPrint + "\'s Personal Polynomial");  
+    d3.select("#png-title").html(usernameToPrint + "\'s Personal Polynomial");
   }
-  
+
 
   formatFrac();
 
@@ -509,7 +509,7 @@ function makePoly(points) {
   // Creates the polynomial to be viewed
   var polynomial = "";
 
-///*  
+///*
 // Polynomial in Decending Degrees
   var topDeg = L.length-1;
 
@@ -529,27 +529,27 @@ function makePoly(points) {
       polynomial = "<span class='fraction' style='color:"+colors.coeff+"'>" + L[topDeg] + "</span> x<sup>" + topDeg + "</sup> ";
       pdfPolynomial = "<span style='color:"+colors.coeff+"'>" + L[topDeg] + "</span> x^" + topDeg;
     }
-    for (var q=points.length-2; q>=0; q--) {    
+    for (var q=points.length-2; q>=0; q--) {
       if (L[q] != 0) {
         if (q == 1 || q ==0 ) {
           if (q == 1) {
             polynomial = polynomial + sign[q] + "<span class='fraction' style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";
-            pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";        
+            pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";
           } else {
             polynomial = polynomial + sign[q] + "<span class='fraction' style='color:"+colors.coeff+"'>" + L[q] + "</span>";
-            pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span>";        
+            pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span>";
           }
         } else {
           polynomial = polynomial + sign[q] + "<span class='fraction' style='color:"+colors.coeff+"'>" + L[q] + "</span> x<sup>" + q + "</sup> ";
-          pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x^" + q;        
+          pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x^" + q;
         }
       }
     }
   }
 //*/
 
-/*  
-// Polynomial in ascending degrees 
+/*
+// Polynomial in ascending degrees
   if (L[0] != 0) {
 
     if (sign[0] == " - ") {
@@ -564,14 +564,14 @@ function makePoly(points) {
 
 
   for (var q=1; q < points.length; q++) {
-//  for (var q=points.length-2; q>=0; q--) {    
+//  for (var q=points.length-2; q>=0; q--) {
     if (L[q] != 0) {
       if (q == 1) {
         polynomial = polynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";
-        pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";        
+        pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x ";
       } else {
         polynomial = polynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x<sup>" + q + "</sup> ";
-        pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x^" + q;        
+        pdfPolynomial = pdfPolynomial + sign[q] + "<span style='color:"+colors.coeff+"'>" + L[q] + "</span> x^" + q;
       }
     }
 
@@ -579,5 +579,3 @@ function makePoly(points) {
 //*/
   return polynomial;
 }
-
-
