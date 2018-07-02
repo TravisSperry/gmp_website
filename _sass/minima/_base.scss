@@ -341,8 +341,13 @@ h1 {
   text-align: center;
 }
 
+.text-brand{
+  color: $brand-color-light;
+  font-weight: 900;
+}
+
 .text-brand-emphasize{
-  color: #386ABC;
+  color: $brand-color-light;
   font-weight: 900;
 }
 
