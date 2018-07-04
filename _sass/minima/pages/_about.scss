@@ -1,0 +1,96 @@
+.about-banner {
+  background-image: url('img/light-gray-bg.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 15rem;
+  padding: 6rem 0 6rem;
+
+  hr {
+    margin: 3em 0;
+  }
+
+  ul {
+    list-style: none;
+
+    li::before {
+      color: $brand-color-light;
+      content: '+';
+      font-weight: bold;
+      padding-right: 1rem;
+    }
+  }
+}
+
+.founding-members {
+  margin-bottom: 7rem;
+  padding-top: 6rem;
+
+  .founding-member-row {
+    margin-top: 5rem;
+  }
+
+  .founder-page-profile {
+    position: relative;
+
+    &:hover .founder-info {
+      display: block;
+      transition: all .5s;
+      z-index: 1;
+    }
+  }
+
+  .founder-info {
+    background: $background-color;
+    color: $grey-color;
+    display: none;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 0;
+  }
+
+  .founder-profile-row {
+    margin-bottom: 4rem;
+  }
+
+  .founder-name {
+    color: $brand-color-light;
+    font-weight: bolder;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .founder-profile-photo {
+    border-radius: 50%;
+    height: 120px;
+    margin: auto;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    width: 120px;
+  }
+
+  .founder-association {
+    padding: 0 3rem;
+  }
+
+  .founder-bio {
+    h1 {
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 1rem;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-top: 1rem;
+  }
+
+  .founder-links {
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
