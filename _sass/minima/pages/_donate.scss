@@ -1,13 +1,17 @@
-.donate-page::before {
-  background-image: url('img/gmp-balloon.svg');
-  background-size: 100% 100%;
-  content: '';
-  display: inline-block;
-  height: 100px;
-  left: 15%;
-  position: absolute;
-  width: 100px;
-  z-index: 1000;
+.donate-page {
+  padding-top: 6rem;
+
+  &::before {
+    background-image: url('img/gmp-balloon.svg');
+    background-size: 100% 100%;
+    content: '';
+    display: inline-block;
+    height: 100px;
+    left: 15%;
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
+  }
 }
 
 .btn-donation-amount {
