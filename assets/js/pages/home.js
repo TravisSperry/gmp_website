@@ -30,3 +30,12 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "IT HAS BEGUN!";
   }
 }, 1000);
+
+ajax.get(apiUrl + '/website_options.json', {}, function(data) {
+  var data = data || ''
+  var studentRegistrationCount = JSON.parse(data)[0].value || '4,456,772';
+  var percentGoal = (parseInt(studentRegistrationCount.replace(/\,/g,''))/10000000)*100;
+
+  document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
+  document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
+});
