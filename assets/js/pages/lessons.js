@@ -1,5 +1,6 @@
 ajax.get(apiUrl + '/exploding_dots/chapters.json', {}, function(data) {
   renderLessons(JSON.parse(data));
+  setTranslationToggle();
 });
 
 renderLessons = function (lessons) {
@@ -36,8 +37,24 @@ renderLessons = function (lessons) {
     content += `</div>\
           </div>\
         </div>\
-        <div class="card-footer">\
-        </div>\
+        <div class="card-footer">`
+    if (lesson.translations.length > 0) {
+      content += `<div class="translations text-center">\
+                    <a class="toggle-translations" href="#">\
+                      <span class="fas fa-caret-down"></span>\
+                      Translations\
+                      <span class="fas fa-caret-down"></span>\
+                    </a>\
+                  </div>\
+                  <div class="translations-list">\
+                  <dl>\
+                  <dt><em class="text-danger">Translations do not include teacher annotations.</em></dt>`
+                    lesson.translations.forEach(function (translation, index) {
+                      content += `<dd><a href="${translation.resource.url}" target="_blank">${translation.language}</a></dd>`;
+                    });
+      content += `</dl></div>`;
+    }
+    content += `</div>\
       </div>\
     </div>`;
     if (index % 3 == 2) {
@@ -46,4 +63,30 @@ renderLessons = function (lessons) {
   });
 
   lessonList.innerHTML = content;
+}
+
+setTranslationToggle = function () {
+  Array.from(document.getElementsByClassName("translations"))
+    .forEach(function (element, index) {
+      element.addEventListener("click", function (event) {
+        showTranslations(element);
+        event.preventDefault();
+      });
+  });
+}
+
+showTranslations = function (element) {
+  var parentofSelected = element.parentNode; // gives the parent DIV
+
+  var children = parentofSelected.childNodes;
+  for (var i=0; i < children.length; i++) {
+    if (children[i].className === "translations-list") {
+      if (parentofSelected.childNodes[i].style.display === "none") {
+        parentofSelected.childNodes[i].style.display = "block";
+      } else {
+        parentofSelected.childNodes[i].style.display = "none";
+      }
+      break;
+    }
+  }
 }

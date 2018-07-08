@@ -23,21 +23,38 @@
   }
 
   .card-footer {
-    padding: 0 0 1rem;
+    padding: .5rem;
   }
 
   .lesson-resource-button {
     background: linear-gradient($brand-color-light 0%, $brand-color 100%);
+    border: 2px white solid;
     border-radius: 3px;
     -webkit-box-shadow: 0 2px 5px 0 #333333;
        -moz-box-shadow: 0 2px 5px 0 #333333;
             box-shadow: 0 2px 5px 0 #333333;
     padding: 1rem 2rem;
-    border: 2px white solid;
     color: white;
   }
 
   .lesson-row {
     margin-bottom: 1rem;
+  }
+
+  .translations-list {
+    display: none;
+    padding: .5rem;
+
+    dl {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $brand-color-light;
+    }
+
+    a:visited {
+      color: $brand-color;
+    }
   }
 }
