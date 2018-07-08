@@ -16,21 +16,24 @@ renderLessons = function (lessons) {
     `<div class="col-md-4">\
       <div class="lesson card">\
         <div class="card-header text-center">\
-          <h1>${lesson.name}</h1>\
-          <h3>Chapter ${lesson.number}</h3>\
+          <h2>${lesson.name}</h2>\
         </div>\
         <div class="card-body">\
           <div class="row between-xs">\
-            <div class="col">\
-              <a href="${lesson.teaching_guide_url}" class="lesson-resource-button">\
-                Teaching Guide\
-              </a>\
-            </div>\
-            <div class="col">\
-              <a href="${lesson.handout_url}" class="lesson-resource-button">\
-                Handout\
-              </a>\
-            </div>\
+            <div class="col">`
+    if (lesson.teaching_guide_url) {
+      content += `<a href="${lesson.teaching_guide_url}" class="lesson-resource-button">\
+                    Teaching Guide\
+                  </a>`
+    }
+    content += `</div>\
+            <div class="col">`
+    if (lesson.handout_url) {
+      content += `<a href="${lesson.handout_url}" class="lesson-resource-button">\
+                    Handout\
+                  </a>`
+    }
+    content += `</div>\
           </div>\
         </div>\
         <div class="card-footer">\
