@@ -14,16 +14,27 @@
   margin-bottom: 3rem;
   margin-top: 2rem;
 
+  .card {
+    position: relative;
+    min-height: 12.5rem;
+  }
+
   .card-header {
+    background: $background-color;
     padding: 1rem;
   }
 
   .card-body {
+    background: $background-color;
     padding: 1rem 1.7rem;
   }
 
   .card-footer {
+    background: $background-color;
+    bottom: 0;
     padding: .5rem;
+    position: absolute;
+    width: 100%;
   }
 
   .lesson-resource-button {
