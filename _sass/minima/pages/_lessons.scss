@@ -17,6 +17,7 @@
   .card {
     position: relative;
     min-height: 12.5rem;
+    margin-bottom: 1rem;
   }
 
   .card-header {
@@ -46,10 +47,6 @@
             box-shadow: 0 2px 5px 0 #333333;
     padding: 1rem 2rem;
     color: white;
-  }
-
-  .lesson-row {
-    margin-bottom: 1rem;
   }
 
   .translations-list {
