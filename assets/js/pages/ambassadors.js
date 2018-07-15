@@ -16,7 +16,7 @@ renderAmbassadors = function (ambassadors) {
     `<div class="col-md-4 col-sm-12 col-xs-12">\
       <div class="ambassador-page-profile">\
         <div class="text-center ambassador-profile-photo">\
-          <img src="${ambassador.profile_photo_url || baseUrl + '/assets/img/gmp-balloon.svg'}" alt="ambassador photo">\
+          <img src="${ambassador.profile_photo_url ||  '/assets/img/gmp-balloon.svg'}" alt="ambassador photo">\
         </div>\
         <div class="text-center text-light ambassador-name">\
           ${ambassador.first_name} ${ambassador.last_name}\
