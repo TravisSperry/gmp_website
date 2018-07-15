@@ -321,7 +321,7 @@ button.btn{
 }
 
 .btn-wide{
-  padding:  .75rem 4.5rem;
+  padding: .75rem 4.5rem;
 
   @include media-query($on-palm) {
     padding:  .75rem 2rem;
