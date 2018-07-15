@@ -13,7 +13,7 @@ renderAmbassadors = function (ambassadors) {
       content += '<div class="row ambassador-profile-row">'
     }
     content +=
-    `<div class="col-md-4">\
+    `<div class="col-md-4 col-sm-12 col-xs-12">\
       <div class="ambassador-page-profile">\
         <div class="text-center ambassador-profile-photo">\
           <img src="${ambassador.profile_photo_url || baseUrl + '/assets/img/gmp-balloon.svg'}" alt="ambassador photo">\
