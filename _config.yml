@@ -18,7 +18,7 @@ email: info@globalmathrproject.org
 description: >- # this means to ignore newlines until "baseurl:"
   Join more than 2 million students, teachers, and friends that already have tried this astounding mathematical experience! See mathematics like you've never seen it before and take part in a global math conversation with your students.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://www.globalmathproject.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.globalmathproject.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: GlobalMathProj
 facebook_username: TheGlobalMathProject
 youtube_username: TheGlobalMathProject
