@@ -307,6 +307,17 @@ button.btn{
   }
 }
 
+.btn-warning{
+  color: #ffd022 !important;
+  border: 2px solid #ffd022;
+
+  &:hover{
+    color: #ffffff !important;
+    background-color: #ffd022;
+    text-decoration: none;
+  }
+}
+
 .btn-midnight{
   color: $grey-color-light !important;
   background-color: #284B64;
