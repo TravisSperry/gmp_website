@@ -26,16 +26,16 @@
 
   .card-header {
     background: $background-color;
-    padding: 1rem;
+    padding: .3rem;
   }
 
   .card-body {
     background: $background-color;
-    padding: 1rem 1.7rem;
+    padding: 1rem 0 0 0;
   }
 
   .card-footer {
     background: $background-color;
-    padding: .5rem;
+    padding: .8rem 0;
   }
 }
