@@ -22,16 +22,31 @@
 
   .card-header {
     background: $background-color;
-    padding: .3rem;
+    padding: 1rem 0;
+
+    h3 {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
   }
 
   .card-body {
     background: $background-color;
-    padding: 1rem 0 0 0;
+    min-height: 172px;
+    padding: 1rem 0 0;
+    text-align: center;
   }
 
   .card-footer {
     background: $background-color;
     padding: .8rem 0;
   }
+
+  .bg-blue {
+    background-color: $brand-color-light;
+  }
+}
+
+.geogebra-img {
+  margin-top: 10%;
 }
