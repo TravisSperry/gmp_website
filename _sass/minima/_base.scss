@@ -339,6 +339,23 @@ button.btn{
   }
 }
 
+.btn-massive {
+  background: linear-gradient($brand-color-light 0%, $brand-color 100%);
+  border: 2px white solid;
+  border-radius: 3px;
+  display: block;
+  -webkit-box-shadow: 0 2px 5px 0 #333333;
+     -moz-box-shadow: 0 2px 5px 0 #333333;
+          box-shadow: 0 2px 5px 0 #333333;
+  padding: 1rem 2rem;
+  color: white;
+  text-align: center;
+
+  &:hover {
+    color: $grey-color-light;
+    text-decoration: none;
+  }
+}
 
 
 /**
