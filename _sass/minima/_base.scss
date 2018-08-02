@@ -352,12 +352,12 @@ button.btn{
   text-align: center;
 
   &:hover {
-    color: $grey-color-light;
+    color: $grey-color;
     text-decoration: none;
   }
 
   &:visited {
-    color: $grey-color;
+    color: white;
   }
 }
 
