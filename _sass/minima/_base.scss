@@ -355,6 +355,10 @@ button.btn{
     color: $grey-color-light;
     text-decoration: none;
   }
+
+  &:visited {
+    color: $grey-color;
+  }
 }
 
 
