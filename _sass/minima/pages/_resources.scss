@@ -1,3 +1,30 @@
+.resources-page {
+  h2 {
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .photo-release {
+    margin: 0 0 2rem;
+  }
+
+  a {
+    color: $brand-color-light;
+  }
+
+  .padded-width {
+    max-width: 86.7%;
+    max-height: 153px;
+  }
+
+  .gmp-horizontal-logo {
+    margin: 4.1rem 0;
+  }
+}
+
 .resources-page-header {
   background-image: url('img/darker-gray-bg.svg');
   background-position: bottom;
@@ -14,6 +41,8 @@
   margin-top: 2rem;
 
   .btn-massive {
+    font-family: 'Proxima Nova';
+    font-size: 1.5rem;
     margin-bottom: 2rem;
   }
 }
