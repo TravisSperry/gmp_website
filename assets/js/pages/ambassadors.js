@@ -42,7 +42,7 @@ renderAmbassadors = function (ambassadors) {
                 </a>
               </div>`
             }
-            if (ambassador.website) {
+            if (ambassador.website.length > 0) {
               content += `<div class="col-xs-4 text-center">
                 <a href="${ ambassador.website || ''  }">
                   <i class="fas fa-external-link-alt"></i>
