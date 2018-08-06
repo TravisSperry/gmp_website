@@ -46,7 +46,7 @@ renderAmbassadors = function (ambassadors) {
                 </a>\
               </div>\
                 <div class="col-xs-4 text-center">\
-                  <a href="${ ambassador.twitter || '' }">\
+                  <a href="https://twitter.com/${ ambassador.twitter || '' }">\
                     <i class="fab fa-twitter"></i>\
                   </a>\
                 </div>\
