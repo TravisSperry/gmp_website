@@ -40,4 +40,4 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/social-images/gmp-facebook-card.png
+      image: /assets/img/social-images/gmp-facebook-card.png
