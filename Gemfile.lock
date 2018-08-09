@@ -250,6 +250,7 @@ DEPENDENCIES
   github-pages
   jekyll-autoprefixer
   jekyll-feed (~> 0.6)
+  jekyll-redirect-from
   jekyll-sitemap
   tzinfo-data
 

@@ -35,6 +35,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-autoprefixer
   - jekyll-seo-tag
+  - jekyll-redirect-from
 
 defaults:
   - scope:
