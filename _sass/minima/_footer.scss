@@ -16,6 +16,10 @@
   li {
     display: inline-block;
   }
+
+  .fas {
+    color: #828282;
+  }
 }
 
 .footer-social-wrapper {
@@ -25,8 +29,8 @@
   border-radius: $base-border-radius;
   margin-left: auto;
   margin-right: auto;
-  max-width: 330px;
-  padding: .75rem 1.3rem;
+  max-width: 360px;
+  padding: .75rem 2.3rem;
 
   .footer-title {
     color: $grey-color;
