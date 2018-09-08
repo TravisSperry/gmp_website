@@ -20,6 +20,7 @@
     box-shadow: 0 2px 5px 0 #333333;
     color: $background-color;
     padding: 1rem;
+    position: relative;
     margin-bottom: 3rem;
 
     .col-sm-3 {
@@ -28,6 +29,18 @@
       h3 {
         margin-bottom: 0;
       }
+    }
+
+    &::before {
+      top: -21%;
+    background-image: url(img/gmp-balloon.svg);
+    background-size: 100% 100%;
+    content: '';
+    height: 100px;
+    left: -5%;
+    position: absolute;
+    width: 100px;
+    z-index: 1000;
     }
   }
 }
