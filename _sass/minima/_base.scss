@@ -328,7 +328,17 @@ button.btn{
     background-color: #1d394d;
     text-decoration: none;
   }
+}
 
+.btn-alert{
+  color: #ff9800 !important;
+  border: 2px solid #ff9800;
+
+  &:hover{
+    color: #ffffff !important;
+    background-color: #ff9800;
+    text-decoration: none;
+  }
 }
 
 .btn-wide{

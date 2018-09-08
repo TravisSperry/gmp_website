@@ -33,14 +33,14 @@
 
     &::before {
       top: -21%;
-    background-image: url(img/gmp-balloon.svg);
-    background-size: 100% 100%;
-    content: '';
-    height: 100px;
-    left: -5%;
-    position: absolute;
-    width: 100px;
-    z-index: 1000;
+      background-image: url(img/gmp-balloon.svg);
+      background-size: 100% 100%;
+      content: '';
+      height: 100px;
+      left: -5%;
+      position: absolute;
+      width: 100px;
+      z-index: 1000;
     }
   }
 }

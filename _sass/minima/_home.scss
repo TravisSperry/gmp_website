@@ -62,6 +62,23 @@
   .cta-button{
     margin: 3rem auto;
   }
+
+  .card {
+    .card-body {
+      background: linear-gradient(180deg, #716f6f 0%, #626262 100%);
+      padding: 1rem;
+    }
+
+    .card-header {
+      background: #716f6f;
+      padding: 2rem 0 0;
+    }
+
+    .card-footer {
+      background: #626262;
+      padding: 2rem 0 0;
+    }
+  }
 }
 
 .home-partners{
