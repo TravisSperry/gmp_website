@@ -65,17 +65,22 @@
 
   .card {
     .card-body {
-      background: linear-gradient(180deg, #716f6f 0%, #626262 100%);
+      background: linear-gradient(180deg, #292929 0%, #191919 100%);
       padding: 1rem;
     }
 
     .card-header {
-      background: #716f6f;
-      padding: 2rem 0 0;
+      background: #292929;
+      padding: 1rem 0 1rem;
+      text-align: center;
+
+      h1 {
+        margin-bottom: 0;
+      }
     }
 
     .card-footer {
-      background: #626262;
+      background: #191919;
       padding: 2rem 0 0;
     }
   }
@@ -182,7 +187,9 @@
 
   .home-cta{
     padding-top: 0;
+  }
 
+  .cta-header {    
     h1{
       margin-top: 3.5em;
     }
