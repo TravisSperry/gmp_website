@@ -39,3 +39,10 @@ ajax.get(apiUrl + '/website_options.json', {}, function(data) {
   document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
   document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
 });
+
+
+ajax.get('https://www.explodingdots.org/userCountFiltered', {}, function(data) {
+  console.log(data)
+  // document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
+  // document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
+});
