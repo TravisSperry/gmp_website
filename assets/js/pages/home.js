@@ -31,18 +31,22 @@ var x = setInterval(function() {
   }
 }, 1000);
 
-ajax.get(apiUrl + '/website_options.json', {}, function(data) {
-  var data = data || ''
-  var studentRegistrationCount = JSON.parse(data)[0].value || '4,456,772';
-  var percentGoal = (parseInt(studentRegistrationCount.replace(/\,/g,''))/10000000)*100;
-
-  document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
-  document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
-});
+// ajax.get(apiUrl + '/website_options.json', {}, function(data) {
+//   var data = data || ''
+//   var studentRegistrationCount = JSON.parse(data)[0].value || '4,456,772';
+//   var percentGoal = (parseInt(studentRegistrationCount.replace(/\,/g,''))/10000000)*100;
+//
+//   document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
+//   document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
+// });
 
 
 ajax.get('https://www.explodingdots.org/userCountFiltered', {}, function(data) {
-  console.log(data)
-  // document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
-  // document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
+  var data = data || ''
+  var studentRegistrationCount = JSON.parse(data);
+  var percentGoal = (parseInt(studentRegistrationCount)/10000000)*100;
+  var formattedStudentCount = studentRegistrationCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
+  document.getElementById("gauge-marker").innerHTML = formattedStudentCount;
 });
