@@ -27,18 +27,9 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "IT HAS BEGUN!";
+    document.getElementById("gmw-countdown").innerHTML = "<span>🎉🎉🎉 IT HAS BEGUN! 🎉🎉🎉</span>";
   }
 }, 1000);
-
-// ajax.get(apiUrl + '/website_options.json', {}, function(data) {
-//   var data = data || ''
-//   var studentRegistrationCount = JSON.parse(data)[0].value || '4,456,772';
-//   var percentGoal = (parseInt(studentRegistrationCount.replace(/\,/g,''))/10000000)*100;
-//
-//   document.getElementById("gauge-progress").setAttribute("style", `width: ${percentGoal}%;`)
-//   document.getElementById("gauge-marker").innerHTML = studentRegistrationCount;
-// });
 
 
 ajax.get('https://www.explodingdots.org/userCountFiltered', {}, function(data) {
