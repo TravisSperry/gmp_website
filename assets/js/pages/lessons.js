@@ -81,7 +81,7 @@ showTranslations = function (element) {
   var children = parentofSelected.childNodes;
   for (var i=0; i < children.length; i++) {
     if (children[i].className === "translations-list") {
-      if (parentofSelected.childNodes[i].style.display === "none") {
+      if (parentofSelected.childNodes[i].style.display === "" || parentofSelected.childNodes[i].style.display === "none") {
         parentofSelected.childNodes[i].style.display = "block";
       } else {
         parentofSelected.childNodes[i].style.display = "none";
