@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("October 9, 2018 23:59:00");
+var countDownDate = new Date("October 9, 2019 23:59:00");
 var countDownTime = countDownDate.getTime();
 var currentMonth = new Date().getMonth()
 
