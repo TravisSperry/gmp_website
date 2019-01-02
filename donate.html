@@ -100,6 +100,7 @@ permalink: /donate/
 </div>
 
 <script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <script>
 document.getElementById('custom-donation-amount').addEventListener('input', function(event) {
@@ -137,16 +138,15 @@ Array.from(document.getElementsByClassName('btn-donation-amount')).forEach(funct
 // Stripe initialization
 var handler = StripeCheckout.configure({
   key: 'pk_live_NJlN9DUexP9dBp6aiAJ9zG6x',
-  image: "{{ 'assets/img/gmp-balloon.png' | relative_url }}",
   locale: 'auto',
   token: function(token) {
-    // You can access the token ID with `token.id`.
-    // Get the token ID to your server-side code for use.
+    chargeWithToken(token);
   }
 });
 
 document.getElementById('submit-donation').addEventListener('click', function(event) {
   var donationAmount = event.toElement.dataset.amount
+  event.preventDefault();
   // Open Checkout with further options:
   handler.open({
     name: 'Global Math Project Donation',
@@ -154,8 +154,23 @@ document.getElementById('submit-donation').addEventListener('click', function(ev
     zipCode: true,
     amount: donationAmount * 100
   });
-  event.preventDefault();
 });
+
+var chargeWithToken = function (token) {
+  var donationAmount = document.getElementById('submit-donation').dataset.amount
+  axios({
+    method: 'post',
+    url: 'https://wt-a100d53d8a5badc553f63bf614d880cc-0.sandbox.auth0-extend.com/stripe-payment/payment',
+    params: {
+      stripeToken: token.id,
+      stripeTokenType: token.type,
+      stripeEmail: token.email,
+      amount: donationAmount * 100,
+      currency: 'USD',
+      description: 'Global Math Project Donation'
+    }
+  });
+};
 
 // Close Checkout on page navigation:
 window.addEventListener('popstate', function() {
