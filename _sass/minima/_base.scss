@@ -358,7 +358,7 @@ button.btn{
      -moz-box-shadow: 0 2px 5px 0 #333333;
           box-shadow: 0 2px 5px 0 #333333;
   padding: 1rem 2rem;
-  color: white;
+  color: white !important;
   text-align: center;
 
   &:hover {
