@@ -67,6 +67,11 @@ permalink: /donate/
             <input id="custom-donation-amount" type="number" name="custom-donation-amount" class="input-donate" value="" placeholder="amount">
           </div>
         </div>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <div class="g-recaptcha" data-sitekey="6LcAkbgUAAAAAFbwbrJ_fkSIYsyQymxpnxXAsa4m"></div>
+          </div>
+        </div>
         <div class="row ">
           <div class="col-sm-12 col-xs-12 text-center">
             <button id="submit-donation" data-amount="30" type="button" name="button" class="btn btn-donate btn-wide">
@@ -98,7 +103,7 @@ permalink: /donate/
     </div>
   </section>
 </div>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script src="https://checkout.stripe.com/checkout.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -145,15 +150,21 @@ var handler = StripeCheckout.configure({
 });
 
 document.getElementById('submit-donation').addEventListener('click', function(event) {
-  var donationAmount = event.toElement.dataset.amount
+  var donationAmount = event.toElement.dataset.amount;
+  var response = grecaptcha.getResponse();
+
   event.preventDefault();
   // Open Checkout with further options:
-  handler.open({
-    name: 'Global Math Project Donation',
-    description: `$${donationAmount} Donation`,
-    zipCode: true,
-    amount: donationAmount * 100
-  });
+  if(response.length == 0){
+    alert('You must verify you are not a robot before donating')
+  } else{
+    handler.open({
+      name: 'Global Math Project Donation',
+      description: `$${donationAmount} Donation`,
+      zipCode: true,
+      amount: donationAmount * 100
+    });
+  }
 });
 
 var chargeWithToken = function (token) {
